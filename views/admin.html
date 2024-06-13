@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="img/logo.jpg" alt="Пельменная Логотип">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/menu">Меню</a></li>
+          <li><a href="/about">О нас</a></li>
+          <li><a href="/contact">Контакты</a></li>
+          <li><a href="/profile">Профиль</a></li>
+          <li><a href="admin.html">Админ-панель</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button id="logoutBtn">Выход</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="admin-section">
+      <h2>Админ-панель</h2>
+
+      <div class="admin-block">
+        <h3>Товары</h3>
+        <div id="products-container">
+          <!-- Здесь будут отображаться товары -->
+        </div>
+        <button id="addProductBtn">Добавить товар</button>
+      </div>
+
+      <div class="admin-block">
+        <h3>Заказы</h3>
+        <div id="orders-container">
+          <!-- Здесь будут отображаться заказы -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Добавить товар</h2>
+      <form id="productForm">
+        <input type="hidden" id="productId">
+        <label for="productName">Название:</label>
+        <input type="text" id="productName" required>
+        <label for="productDescription">Описание:</label>
+        <textarea id="productDescription" required></textarea>
+        <label for="productPrice">Цена:</label>
+        <input type="number" id="productPrice" required>
+        <label for="productWeight">Вес:</label>
+        <input type="text" id="productWeight" required>
+        <label for="productCategory">Категория:</label>
+        <select id="productCategory" required>
+          <!-- Здесь будут добавлены категории -->
+        </select>
+        <label for="productImage">Изображение:</label>
+        <input type="file" id="productImage" required>
+        <button type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

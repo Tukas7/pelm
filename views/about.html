@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Пельменная</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вход</h2>
+            <form action="#" method="POST">
+                <label for="loginPhone">Номер телефона:</label>
+                <input type="tel" id="loginPhone" name="phone" pattern="[0-9]{11}" required>
+                <label for="loginPassword">Пароль:</label>
+                <input type="password" id="loginPassword" name="password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Модальное окно для регистрации -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Регистрация</h2>
+            <form action="#" method="POST">
+                <label for="signupName">Имя:</label>
+                <input type="text" id="signupName" name="name" required>
+                <label for="signupPhone">Номер телефона:</label>
+                <input type="tel" id="signupPhone" name="phone" pattern="[0-9]{11}" required>
+                <label for="signupPassword">Пароль:</label>
+                <input type="password" id="signupPassword" name="password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <div id="cartModal" class="modal cart-modal">
+        <div class="modal-content cart-modal-content">
+          <span class="close cart-close">&times;</span>
+          <h2>Ваша корзина</h2>
+          <div class="cart-items">
+            <!-- Здесь будут добавлены товары -->
+          </div>
+          <div class="cart-total">
+            <h3>Итого: <span id="totalPrice">0 р.</span></h3>
+          </div>
+          <div class="payment-options">
+            <h3>Способ оплаты:</h3>
+            <label>
+              <input type="radio" name="payment" value="cash" id="paymentCash"> Наличными курьеру
+            </label>
+            <label>
+              <input type="radio" name="payment" value="card" id="paymentCard"> Картой курьеру
+            </label>
+            <label>
+              <input type="radio" name="payment" value="online" id="paymentOnline"> Онлайн оплата
+            </label>
+            <div id="changeRequired" style="display: none;">
+              <label for="changeAmount">Сколько нужно будет сдачи с (руб.):</label>
+              <input type="number" id="changeAmount" name="changeAmount">
+            </div>
+          </div>
+          <div class="address-fields">
+            <h3>Адрес доставки:</h3>
+            <label for="homeAddress">Адрес:</label>
+            <input type="text" id="homeAddress" name="homeAddress" required>
+            <label for="entrance">Подъезд:</label>
+            <input type="text" id="entrance" name="entrance">
+            <label for="apartment">Квартира:</label>
+            <input type="text" id="apartment" name="apartment">
+          </div>
+          <div class="order-comments">
+            <label for="orderComments">Комментарии к заказу:</label>
+            <textarea id="orderComments" name="orderComments" rows="4"></textarea>
+          </div>
+          <button class="checkout-btn">Перейти к оплате</button>
+        </div>
+      </div>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="img/logo.jpg" alt="Пельменная Логотип">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/menu">Меню</a></li>
+          <li><a href="/about">О нас</a></li>
+          <li><a href="/contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button id="loginBtn">Вход</button>
+        <button id="signupBtn">Регистрация</button>
+        <button id="cartBtn"><i class="fas fa-shopping-cart"></i> Корзина</button>
+    </div>
+    </div>
+    <div id="cartModal" class="modal cart-modal">
+      <div class="modal-content cart-modal-content">
+        <span class="close cart-close">&times;</span>
+        <h2>Ваша корзина</h2>
+        <div class="cart-items">
+          <!-- Здесь будут добавлены товары -->
+        </div>
+        <div class="cart-total">
+          <h3>Итого: <span id="totalPrice">0 р.</span></h3>
+        </div>
+        <div class="payment-options">
+          <h3>Способ оплаты:</h3>
+          <label>
+            <input type="radio" name="payment" value="cash" id="paymentCash"> Наличными курьеру
+          </label>
+          <label>
+            <input type="radio" name="payment" value="card" id="paymentCard"> Картой курьеру
+          </label>
+          <label>
+            <input type="radio" name="payment" value="online" id="paymentOnline"> Онлайн оплата
+          </label>
+          <div id="changeRequired" style="display: none;">
+            <label for="changeAmount">Сколько нужно будет сдачи с (руб.):</label>
+            <input type="number" id="changeAmount" name="changeAmount">
+          </div>
+        </div>
+        <div class="address-fields">
+          <h3>Адрес доставки:</h3>
+          <label for="homeAddress">Адрес:</label>
+          <input type="text" id="homeAddress" name="homeAddress" required>
+          <label for="entrance">Подъезд:</label>
+          <input type="text" id="entrance" name="entrance">
+          <label for="apartment">Квартира:</label>
+          <input type="text" id="apartment" name="apartment">
+        </div>
+        <div class="order-comments">
+          <label for="orderComments">Комментарии к заказу:</label>
+          <textarea id="orderComments" name="orderComments" rows="4"></textarea>
+        </div>
+        <button class="checkout-btn">Перейти к оплате</button>
+      </div>
+    </div>
+  </header>
+
+    <!-- О нас -->
+    <section class="about-us" id="about">
+        <h2>О нас</h2>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="history">Наша история</button>
+            <button class="tab-button" data-tab="team">Наша команда</button>
+            <button class="tab-button" data-tab="values">Наши ценности</button>
+        </div>
+        <div class="tab-content active" id="history">
+            <div class="about-content">
+                <p>Наша пельменная была основана в 2020 году с целью предложить нашим клиентам самые вкусные и качественные пельмени в городе. Мы используем только свежие и натуральные ингредиенты, чтобы каждый наш гость мог насладиться настоящим вкусом домашней еды.</p>
+                <p>Наши повара - настоящие мастера своего дела, которые с любовью и заботой готовят каждую порцию. Мы предлагаем разнообразные виды пельменей, чтобы каждый мог найти что-то по своему вкусу. В нашем меню есть как традиционные пельмени с мясом, так и оригинальные варианты с овощами и морепродуктами.</p>
+                <p>Мы ценим каждого нашего гостя и стремимся сделать ваше пребывание у нас максимально комфортным и приятным. Наша команда всегда готова помочь вам с выбором блюд и ответить на все ваши вопросы. Приходите к нам и ощутите тепло и уют нашего заведения!</p>
+            </div>
+            <div class="about-image">
+                <img src="about_us.jpg" alt="О нас">
+            </div>
+        </div>
+        <div class="tab-content" id="team">
+            <div class="about-content">
+                <p>Наша команда состоит из профессионалов, которые любят своё дело. Мы гордимся нашими поварами, которые каждый день создают кулинарные шедевры для наших гостей. В нашем коллективе работают только опытные и талантливые специалисты, которые делают всё возможное, чтобы каждый клиент остался доволен.</p>
+                <p>Наши официанты всегда готовы помочь вам с выбором блюд и напитков, рассказать о наших специальных предложениях и акциях. Мы ценим каждого нашего сотрудника и создаём условия для их профессионального роста и развития.</p>
+                <p>Команда управления нашей пельменной всегда следит за качеством обслуживания и старается внедрять новые идеи и улучшения, чтобы ваше пребывание у нас было ещё приятнее.</p>
+            </div>
+            <div class="about-image">
+                <img src="team.jpg" alt="Наша команда">
+            </div>
+        </div>
+        <div class="tab-content" id="values">
+            <div class="about-content">
+                <p>Мы придерживаемся высоких стандартов качества и всегда стремимся к совершенству. В нашей пельменной мы используем только лучшие ингредиенты, чтобы каждый наш гость мог насладиться настоящим вкусом домашней еды.</p>
+                <p>Мы заботимся о наших клиентах и всегда стремимся сделать их визит к нам максимально комфортным и приятным. Вежливое обслуживание, уютная атмосфера и разнообразие меню - это то, что делает нашу пельменную особенной.</p>
+                <p>Наши ценности - это качество, честность и уважение к каждому гостю. Мы всегда рады видеть вас у нас и делаем всё возможное, чтобы ваше пребывание у нас было незабываемым.</p>
+            </div>
+            <div class="about-image">
+                <img src="values.jpg" alt="Наши ценности">
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>Контакты: +7 (123) 456-78-90 | Адрес: ул. Пельменная, 1</p>
+            <p>Социальные сети: 
+                <a href="#">ВКонтакте</a> | 
+                <a href="#">Instagram</a>
+            </p>
+            <p>Часы работы: Пн-Вс 10:00 - 22:00</p>
+        </div>
+    </footer>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.getAttribute('data-tab');
+
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                button.classList.add('active');
+                document.getElementById(tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

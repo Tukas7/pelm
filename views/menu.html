@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню - Пельменная</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вход</h2>
+            <form action="#" method="POST">
+                <label for="loginPhone">Номер телефона:</label>
+                <input type="tel" id="loginPhone" name="phone" pattern="[0-9]{11}" required>
+                <label for="loginPassword">Пароль:</label>
+                <input type="password" id="loginPassword" name="password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Модальное окно для регистрации -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Регистрация</h2>
+            <form action="#" method="POST">
+                <label for="signupName">Имя:</label>
+                <input type="text" id="signupName" name="name" required>
+                <label for="signupPhone">Номер телефона:</label>
+                <input type="tel" id="signupPhone" name="phone" pattern="[0-9]{11}" required>
+                <label for="signupPassword">Пароль:</label>
+                <input type="password" id="signupPassword" name="password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <div id="cartModal" class="modal cart-modal">
+        <div class="modal-content cart-modal-content">
+          <span class="close cart-close">&times;</span>
+          <h2>Ваша корзина</h2>
+          <div class="cart-items">
+            <!-- Здесь будут добавлены товары -->
+          </div>
+          <div class="cart-total">
+            <h3>Итого: <span id="totalPrice">0 р.</span></h3>
+          </div>
+          <div class="payment-options">
+            <h3>Способ оплаты:</h3>
+            <label>
+              <input type="radio" name="payment" value="cash" id="paymentCash"> Наличными курьеру
+            </label>
+            <label>
+              <input type="radio" name="payment" value="card" id="paymentCard"> Картой курьеру
+            </label>
+            <label>
+              <input type="radio" name="payment" value="online" id="paymentOnline"> Онлайн оплата
+            </label>
+            <div id="changeRequired" style="display: none;">
+              <label for="changeAmount">Сколько нужно будет сдачи с (руб.):</label>
+              <input type="number" id="changeAmount" name="changeAmount">
+            </div>
+          </div>
+          <div class="address-fields">
+            <h3>Адрес доставки:</h3>
+            <label for="homeAddress">Адрес:</label>
+            <input type="text" id="homeAddress" name="homeAddress" required>
+            <label for="entrance">Подъезд:</label>
+            <input type="text" id="entrance" name="entrance">
+            <label for="apartment">Квартира:</label>
+            <input type="text" id="apartment" name="apartment">
+          </div>
+          <div class="order-comments">
+            <label for="orderComments">Комментарии к заказу:</label>
+            <textarea id="orderComments" name="orderComments" rows="4"></textarea>
+          </div>
+          <button class="checkout-btn">Перейти к оплате</button>
+        </div>
+      </div>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="img/logo.jpg" alt="Пельменная Логотип">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/menu">Меню</a></li>
+          <li><a href="/about">О нас</a></li>
+          <li><a href="/contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button id="loginBtn">Вход</button>
+        <button id="signupBtn">Регистрация</button>
+        <button id="cartBtn"><i class="fas fa-shopping-cart"></i> Корзина</button>
+    </div>
+    </div>
+    <div id="cartModal" class="modal cart-modal">
+      <div class="modal-content cart-modal-content">
+        <span class="close cart-close">&times;</span>
+        <h2>Ваша корзина</h2>
+        <div class="cart-itemss">
+          <!-- Здесь будут добавлены товары -->
+        </div>
+        <div class="cart-total">
+          <h3>Итого: <span id="totalPrice">0 р.</span></h3>
+        </div>
+        <div class="payment-options">
+          <h3>Способ оплаты:</h3>
+          <label>
+            <input type="radio" name="payment" value="cash" id="paymentCash"> Наличными курьеру
+          </label>
+          <label>
+            <input type="radio" name="payment" value="card" id="paymentCard"> Картой курьеру
+          </label>
+          <label>
+            <input type="radio" name="payment" value="online" id="paymentOnline"> Онлайн оплата
+          </label>
+          <div id="changeRequired" style="display: none;">
+            <label for="changeAmount">Сколько нужно будет сдачи с (руб.):</label>
+            <input type="number" id="changeAmount" name="changeAmount">
+          </div>
+        </div>
+        <div class="address-fields">
+          <h3>Адрес доставки:</h3>
+          <label for="homeAddress">Адрес:</label>
+          <input type="text" id="homeAddress" name="homeAddress" required>
+          <label for="entrance">Подъезд:</label>
+          <input type="text" id="entrance" name="entrance">
+          <label for="apartment">Квартира:</label>
+          <input type="text" id="apartment" name="apartment">
+        </div>
+        <div class="order-comments">
+          <label for="orderComments">Комментарии к заказу:</label>
+          <textarea id="orderComments" name="orderComments" rows="4"></textarea>
+        </div>
+        <button class="checkout-btn">Перейти к оплате</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="full-menu" id="menu">
+    <h2>Полное меню</h2>
+    <div class="menu-filters">
+      <input type="text" id="search" placeholder="Поиск по меню...">
+      <select id="filter">
+        <option value="all">Все</option>
+        <option value="new">Новинки</option>
+        <option value="vegetarian">Вегетарианские</option>
+        <option value="meat">С мясом</option>
+      </select>
+    </div>
+    <div class="menu-cards" id="menu-cardss">
+      <!-- Карточки меню будут динамически добавлены сюда через JavaScript -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>Контакты: +7 (123) 456-78-90 | Адрес: ул. Пельменная, 1</p>
+      <p>Социальные сети: 
+        <a href="#">ВКонтакте</a> | 
+        <a href="#">Instagram</a>
+      </p>
+      <p>Часы работы: Пн-Вс 10:00 - 22:00</p>
+    </div>
+  </footer>
+  <script src="/js/script.js"></script>
+</body>
+</html>
